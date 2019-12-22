@@ -1,0 +1,518 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Lexware Browser 2019 (2019-11-26)'
+  ClientHeight = 595
+  ClientWidth = 925
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Panel2: TPanel
+    Position.X = 792.000000000000000000
+    Position.Y = 80.000000000000000000
+    Size.Width = 120.000000000000000000
+    Size.Height = 153.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 29
+    object BttnFilterClear: TButton
+      Position.X = 16.000000000000000000
+      Position.Y = 32.000000000000000000
+      Size.Width = 89.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Clear'
+      OnClick = BttnFilterClearClick
+    end
+    object Label7: TLabel
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 105.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Center
+      Text = 'Filter'
+      TabOrder = 1
+    end
+    object EdFilter: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 2
+      Position.X = 16.000000000000000000
+      Position.Y = 56.000000000000000000
+      Size.Width = 89.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object BttenFilterKonten: TButton
+      Position.X = 16.000000000000000000
+      Position.Y = 80.000000000000000000
+      Size.Width = 89.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'Konten'
+      OnClick = BttenFilterKontenClick
+    end
+    object BttnFilterCostUnit: TButton
+      Position.X = 16.000000000000000000
+      Position.Y = 104.000000000000000000
+      Size.Width = 89.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'Kostenstelle'
+      OnClick = BttnFilterCostUnitClick
+    end
+    object BttnAmount: TButton
+      Position.X = 16.000000000000000000
+      Position.Y = 128.000000000000000000
+      Size.Width = 89.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      Text = 'Betrag'
+      OnClick = BttnAmountClick
+    end
+  end
+  object Panel1: TPanel
+    Position.X = 8.000000000000000000
+    Position.Y = 79.000000000000000000
+    Size.Width = 777.000000000000000000
+    Size.Height = 154.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 9
+    object Label3: TLabel
+      Position.X = 8.000000000000000000
+      Position.Y = 56.000000000000000000
+      Size.Width = 49.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Trailing
+      Text = 'Haben'
+      TabOrder = 0
+    end
+    object EdBuchungsText: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 3
+      ReadOnly = True
+      Position.X = 136.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 633.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object EdSollKtoName: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 2
+      ReadOnly = True
+      Position.X = 624.000000000000000000
+      Position.Y = 32.000000000000000000
+      Size.Width = 145.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object EdHabenKtoName: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 1
+      ReadOnly = True
+      Position.X = 624.000000000000000000
+      Position.Y = 56.000000000000000000
+      Size.Width = 145.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object EdBuchungsNr: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 6
+      ReadOnly = True
+      Position.X = 64.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 65.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object EdSollKtoNr: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 5
+      ReadOnly = True
+      Position.X = 64.000000000000000000
+      Position.Y = 32.000000000000000000
+      Size.Width = 65.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object EdHabenKtoNr: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 4
+      ReadOnly = True
+      Position.X = 64.000000000000000000
+      Position.Y = 56.000000000000000000
+      Size.Width = 65.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object Label4: TLabel
+      Position.X = 412.000000000000000000
+      Position.Y = 35.000000000000000000
+      Size.Width = 101.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Trailing
+      Text = 'Buchungsdatum'
+      TabOrder = 8
+    end
+    object Label5: TLabel
+      Position.X = 412.000000000000000000
+      Position.Y = 56.000000000000000000
+      Size.Width = 101.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Trailing
+      Text = 'Betrag'
+      TabOrder = 10
+    end
+    object EdDatumBuchung: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 15
+      ReadOnly = True
+      Position.X = 520.000000000000000000
+      Position.Y = 32.000000000000000000
+    end
+    object EdBetragNetto: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 13
+      ReadOnly = True
+      Position.X = 520.000000000000000000
+      Position.Y = 56.000000000000000000
+    end
+    object EdKostenstelle1: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 12
+      ReadOnly = True
+      Position.X = 64.000000000000000000
+      Position.Y = 80.000000000000000000
+      Size.Width = 172.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object EdKostenstelle2: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 11
+      ReadOnly = True
+      Position.X = 64.000000000000000000
+      Position.Y = 104.000000000000000000
+      Size.Width = 172.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object LblBetrag: TLabel
+      Position.X = 4.000000000000000000
+      Position.Y = 82.000000000000000000
+      Size.Width = 53.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Trailing
+      Text = 'Kostenst.'
+      TabOrder = 9
+    end
+    object ComboKst1: TComboBox
+      Position.X = 240.000000000000000000
+      Position.Y = 80.000000000000000000
+      Size.Width = 273.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 16
+      OnChange = ComboKst1Change
+    end
+    object ComboKst2: TComboBox
+      Position.X = 240.000000000000000000
+      Position.Y = 104.000000000000000000
+      Size.Width = 273.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 17
+      OnChange = ComboKst2Change
+    end
+    object BttnSave: TButton
+      Enabled = False
+      Position.X = 520.000000000000000000
+      Position.Y = 104.000000000000000000
+      Size.Width = 249.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 18
+      Text = 'Speichern'
+      OnClick = BttnSaveClick
+    end
+    object ComboKtoSoll: TComboBox
+      Position.X = 136.000000000000000000
+      Position.Y = 32.000000000000000000
+      Size.Width = 281.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 19
+      OnChange = ComboKtoSollChange
+    end
+    object ComboKtoHaben: TComboBox
+      Position.X = 136.000000000000000000
+      Position.Y = 56.000000000000000000
+      Size.Width = 281.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 20
+      OnChange = ComboKtoHabenChange
+    end
+    object EdDatumBeleg: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 14
+      ReadOnly = True
+      Position.X = 520.000000000000000000
+      Position.Y = 80.000000000000000000
+    end
+    object Label6: TLabel
+      Position.X = 628.000000000000000000
+      Position.Y = 83.000000000000000000
+      Size.Width = 101.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Belegdatum'
+      TabOrder = 7
+    end
+  end
+  object BttnLoad: TButton
+    Position.X = 16.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 97.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'Load Tables'
+    OnClick = BttnLoadClick
+  end
+  object ToolBar1: TToolBar
+    Size.Width = 925.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+  end
+  object StatusBar1: TStatusBar
+    Position.Y = 573.000000000000000000
+    ShowSizeGrip = True
+    Size.Width = 925.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+  end
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Align = Bottom
+    Position.Y = 459.000000000000000000
+    Size.Width = 925.000000000000000000
+    Size.Height = 114.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Viewport.Width = 925.000000000000000000
+    Viewport.Height = 114.000000000000000000
+  end
+  object StringGrid1: TStringGrid
+    Align = Bottom
+    CanFocus = True
+    ClipChildren = True
+    Position.Y = 248.000000000000000000
+    Size.Width = 925.000000000000000000
+    Size.Height = 211.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    RowHeight = 16.000000000000000000
+    Options = [Editing, ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
+    OnSelChanged = StringGrid1SelChanged
+    OnCellClick = StringGrid1CellClick
+    Viewport.Width = 925.000000000000000000
+    Viewport.Height = 211.000000000000000000
+    object StringColumn1: TStringColumn
+      Size.Width = 49.000000000000000000
+    end
+    object StringColumn2: TStringColumn
+      Size.Width = 71.000000000000000000
+    end
+    object StringColumn3: TStringColumn
+      Size.Width = 79.000000000000000000
+    end
+    object StringColumn4: TStringColumn
+      Size.Width = 183.000000000000000000
+    end
+    object StringColumn5: TStringColumn
+      Size.Width = 87.000000000000000000
+    end
+    object StringColumn6: TStringColumn
+      Size.Width = 87.000000000000000000
+    end
+    object StringColumn7: TStringColumn
+    end
+    object StringColumn8: TStringColumn
+      Size.Width = 91.000000000000000000
+    end
+    object StringColumn9: TStringColumn
+      Size.Width = 30.000000000000000000
+    end
+    object StringColumn10: TStringColumn
+      Size.Width = 50.000000000000000000
+    end
+    object CheckColumn1: TCheckColumn
+    end
+  end
+  object ComboBox1: TComboBox
+    Position.X = 528.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 113.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+  end
+  object Label1: TLabel
+    Position.X = 16.000000000000000000
+    Position.Y = 88.000000000000000000
+    Size.Width = 49.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.HorzAlign = Trailing
+    Text = 'Buchung'
+    TabOrder = 7
+  end
+  object Label2: TLabel
+    Position.X = 16.000000000000000000
+    Position.Y = 112.000000000000000000
+    Size.Width = 49.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.HorzAlign = Trailing
+    Text = 'Soll'
+    TabOrder = 8
+  end
+  object BttnLogKonten: TButton
+    Position.X = 120.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 73.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 10
+    Text = 'Konten'
+    OnClick = BttnLogKontenClick
+  end
+  object BttnJournal: TButton
+    Position.X = 200.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 65.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 11
+    Text = 'Journal'
+  end
+  object BttnKostenstellen: TButton
+    Position.X = 272.000000000000000000
+    Position.Y = 48.000000000000000000
+    TabOrder = 12
+    Text = 'Kostenstellen'
+    OnClick = BttnKostenstellenClick
+  end
+  object BttnDatum: TButton
+    Position.X = 360.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 65.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 13
+    Text = 'Datum'
+    OnClick = BttnDatumClick
+  end
+  object MainMenu1: TMainMenu
+    Left = 776
+    object MnuItmFile: TMenuItem
+      Text = 'F&ile'
+      object MenuItemFile: TMenuItem
+        Locked = True
+        Text = 'Exit'
+        OnClick = MenuItemFileClick
+      end
+    end
+    object MenuItem1: TMenuItem
+      Text = 'Reports'
+      object MenuItem2: TMenuItem
+        Locked = True
+        Text = 'Budget'
+        OnClick = MenuItem2Click
+      end
+    end
+    object MnuItmHelp: TMenuItem
+      Text = 'Help'
+    end
+  end
+  object BttnClear: TButton
+    Position.X = 488.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 16
+    Text = 'Clear'
+    OnClick = BttnClearClick
+  end
+  object BttnDelete: TButton
+    Position.X = 432.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 49.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 18
+    Text = 'Delete'
+    OnClick = BttnDeleteClick
+  end
+  object BttnMissingKSt: TButton
+    Position.X = 648.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 65.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 21
+    Text = 'KSt fehlt'
+    OnClick = BttnMissingKStClick
+  end
+  object BttnKtoChk: TButton
+    Position.X = 720.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 65.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 24
+    Text = 'Kto Check'
+    OnClick = BttnKtoChkClick
+  end
+  object BttnExport: TButton
+    Position.X = 792.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 57.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 26
+    Text = 'Export'
+    OnClick = BttnExportClick
+  end
+  object SaveDialog1: TSaveDialog
+    DefaultExt = 'db3'
+    Options = [ofHideReadOnly, ofPathMustExist, ofCreatePrompt, ofEnableSizing]
+    Title = 'Export journal to database'
+    Left = 880
+  end
+  object BttnBudget: TButton
+    Position.X = 856.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 56.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 32
+    Text = 'Budget'
+    OnClick = BttnBudgetClick
+  end
+end
