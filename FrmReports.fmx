@@ -58,19 +58,21 @@ object FormReports: TFormReports
     Text = 'Sportkomm.'
     OnClick = BttnSKKostenClick
   end
+  object BttnPraesidium: TButton
+    Position.X = 408.000000000000000000
+    Position.Y = 432.000000000000000000
+    TabOrder = 58
+    Text = 'Praesidium'
+    OnClick = BttnPraesidiumClick
+  end
   object SQLConnection1: TSQLConnection
+    ConnectionName = 'SQLITECONNECTION'
     DriverName = 'Sqlite'
     LoginPrompt = False
     Params.Strings = (
-      'DriverUnit=Data.DbxSqlite'
-      
-        'DriverPackageLoader=TDBXSqliteDriverLoader,DBXSqliteDriver260.bp' +
-        'l'
-      
-        'MetaDataPackageLoader=TDBXSqliteMetaDataCommandFactory,DbxSqlite' +
-        'Driver260.bpl'
-      'FailIfMissing=True'
-      '=')
+      'DriverName=Sqlite'
+      'Database=C:\Users\xca1030\AppData\Local\Temp\tmp6463.tmp.db3')
+    Connected = True
   end
   object SQLQuery1: TSQLQuery
     MaxBlobSize = 1
@@ -16137,7 +16139,7 @@ object FormReports: TFormReports
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 43807.935788935200000000
-    ReportOptions.LastChange = 43807.935788935200000000
+    ReportOptions.LastChange = 44114.581066435190000000
     ReportOptions.IsFMXReport = True
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
@@ -16420,7 +16422,7 @@ object FormReports: TFormReports
           Font.Height = -16.000000000000000000
           HAlign = haRight
           Memo.UTF8W = (
-            '[Date]')
+            '31.03.2019')
           ParentFont = False
         end
         object Picture1: TfrxPictureView
@@ -32019,6 +32021,229 @@ object FormReports: TFormReports
           HightQuality = False
           Transparent = False
           TransparentColor = claWhite
+        end
+      end
+    end
+  end
+  object SQLQuery6: TSQLQuery
+    MaxBlobSize = 1
+    Params = <>
+    SQL.Strings = (
+      'select type, accno, accname, costunitno, COSTUNITTEXT, value  '
+      'from CostUnitSummery'
+      'where norprt = 5'
+      'order by type, accno')
+    SQLConnection = SQLConnection1
+    Left = 352
+    Top = 160
+  end
+  object frxDBDataset6: TfrxDBDataset
+    UserName = 'frxDBDataset6'
+    CloseDataSource = False
+    DataSet = SQLQuery6
+    BCDToCurrency = False
+    Left = 408
+    Top = 160
+  end
+  object frxReport6: TfrxReport
+    Version = '2.6.2'
+    DotMatrixReport = False
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFullScreen, pbOutline, pbThumbnails, pbPageSetup, pbEdit, pbNavigator, pbClose]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 43863.956943530100000000
+    ReportOptions.LastChange = 44114.579377708330000000
+    ReportOptions.IsFMXReport = True
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 472
+    Top = 160
+    Datasets = <
+      item
+        DataSet = frxDBDataset6
+        DataSetName = 'frxDBDataset6'
+      end>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 215.900000000000000000
+      PaperHeight = 279.400000000000000000
+      PaperSize = 1
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      object PageHeader1: TfrxPageHeader
+        Height = 94.488249999999990000
+        Top = 18.897650000000000000
+        Width = 740.409927000000000000
+        object Memo2: TfrxMemoView
+          Width = 623.622450000000000000
+          Height = 34.015770000000000000
+          ShowHint = False
+          Font.Name = 'Arial'
+          Font.PixelsPerInch = 96.000000000000000000
+          Font.Style = [fsBold]
+          Font.Color = claBlack
+          Font.Height = -21.333333969116210000
+          Memo.UTF8W = (
+            'W'#252'rttembergischer Rollsport- und Inline-Verband e.V.')
+          ParentFont = False
+        end
+        object Memo6: TfrxMemoView
+          Top = 34.015770000000000000
+          Width = 623.622450000000000000
+          Height = 34.015770000000000000
+          ShowHint = False
+          Font.Name = 'Arial'
+          Font.PixelsPerInch = 96.000000000000000000
+          Font.Style = []
+          Font.Color = claBlack
+          Font.Height = -13.333333015441890000
+          Memo.UTF8W = (
+            
+              'Pr'#228'sident: Richard Gusmann, Max-Beckmann-Str. 33, 76227 Karlsruh' +
+              'e'
+            'Vize-Pr'#228'sidentin Finanzen: Sandra Schmitz')
+          ParentFont = False
+        end
+        object Memo7: TfrxMemoView
+          Top = 68.031540000000010000
+          Width = 340.157700000000000000
+          Height = 26.456710000000000000
+          ShowHint = False
+          Font.Name = 'Arial'
+          Font.PixelsPerInch = 96.000000000000000000
+          Font.Style = [fsBold]
+          Font.Color = claBlack
+          Font.Height = -16.000000000000000000
+          Memo.UTF8W = (
+            'Auswertung Pr'#228'sidium')
+          ParentFont = False
+        end
+        object Memo8: TfrxMemoView
+          Left = 377.953000000000000000
+          Top = 68.031540000000010000
+          Width = 245.669450000000000000
+          Height = 26.456710000000000000
+          ShowHint = False
+          DisplayFormat.FormatStr = 'dd.mm.yyyy'
+          DisplayFormat.Kind = fkDateTime
+          Font.Name = 'Arial'
+          Font.PixelsPerInch = 96.000000000000000000
+          Font.Style = [fsBold]
+          Font.Color = claBlack
+          Font.Height = -16.000000000000000000
+          HAlign = haRight
+          Memo.UTF8W = (
+            '31.03.2019')
+          ParentFont = False
+        end
+      end
+      object PageFooter1: TfrxPageFooter
+        Height = 22.677180000000000000
+        Top = 332.598640000000000000
+        Width = 740.409927000000000000
+      end
+      object GroupHeader1: TfrxGroupHeader
+        Height = 22.677180000000000000
+        Top = 170.078850000000000000
+        Width = 740.409927000000000000
+        Condition = 'frxDBDataset6."TYPE"'
+        object frxDBDataset6PRNTCUTEXT: TfrxMemoView
+          Width = 495.118430000000000000
+          Height = 18.897650000000000000
+          ShowHint = False
+          DataSet = frxDBDataset6
+          DataSetName = 'frxDBDataset6'
+        end
+        object frxDBDataset6TYPE: TfrxMemoView
+          Left = 3.779530000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          ShowHint = False
+          DataSet = frxDBDataset6
+          DataSetName = 'frxDBDataset6'
+          Memo.UTF8W = (
+            '[frxDBDataset6."TYPE"]')
+        end
+      end
+      object GroupFooter1: TfrxGroupFooter
+        Height = 22.677180000000000000
+        Top = 253.228510000000000000
+        Width = 740.409927000000000000
+        object Memo1: TfrxMemoView
+          Left = 623.622450000000000000
+          Top = 3.779529999999994000
+          Width = 94.488249999999990000
+          Height = 18.897650000000000000
+          ShowHint = False
+          DisplayFormat.FormatStr = '%2.2f'
+          DisplayFormat.Kind = fkNumeric
+          Font.Name = 'Arial'
+          Font.PixelsPerInch = 96.000000000000000000
+          Font.Style = [fsBold]
+          Font.Color = claBlack
+          Font.Height = -13.333333015441890000
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[SUM(<frxDBDataset6."VALUE">,MasterData1)]')
+          ParentFont = False
+        end
+      end
+      object MasterData1: TfrxMasterData
+        Height = 22.677180000000000000
+        Top = 211.653680000000000000
+        Width = 740.409927000000000000
+        DataSet = frxDBDataset6
+        DataSetName = 'frxDBDataset6'
+        RowCount = 0
+        object frxDBDataset6KTOHABEN: TfrxMemoView
+          Left = 3.779530000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          ShowHint = False
+          DataSet = frxDBDataset6
+          DataSetName = 'frxDBDataset6'
+          Memo.UTF8W = (
+            '[frxDBDataset6."ACCNO"]')
+        end
+        object frxDBDataset6textAccount: TfrxMemoView
+          Left = 94.488249999999990000
+          Width = 400.630180000000000000
+          Height = 18.897650000000000000
+          ShowHint = False
+          DataSet = frxDBDataset6
+          DataSetName = 'frxDBDataset6'
+          Memo.UTF8W = (
+            '[frxDBDataset6."ACCNAME"]')
+        end
+        object frxDBDataset6Column4: TfrxMemoView
+          Left = 532.913730000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          ShowHint = False
+          DataSet = frxDBDataset6
+          DataSetName = 'frxDBDataset6'
+          DisplayFormat.FormatStr = '%2.2f'
+          DisplayFormat.Kind = fkNumeric
+          Font.Name = 'Arial'
+          Font.PixelsPerInch = 96.000000000000000000
+          Font.Style = []
+          Font.Color = claBlack
+          Font.Height = -13.333333015441890000
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[frxDBDataset6."VALUE"]')
+          ParentFont = False
         end
       end
     end

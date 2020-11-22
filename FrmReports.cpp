@@ -127,3 +127,10 @@ void __fastcall TFormReports::BttnSKKostenClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TFormReports::BttnPraesidiumClick(TObject *Sender)
+{
+	// to be done
+    this->frxReport6->ShowReport();
+}
+//---------------------------------------------------------------------------
+

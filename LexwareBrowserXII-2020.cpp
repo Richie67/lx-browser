@@ -7,8 +7,9 @@
 #pragma hdrstop
 #include <System.StartUpCopy.hpp>
 //---------------------------------------------------------------------------
-USEFORM("FrmMain.cpp", Form1);
 USEFORM("FormBudget.cpp", FrmBudget);
+USEFORM("DlgSelectMandantAndYear.cpp", FrmDlgSelectMandantAndYear);
+USEFORM("FrmMain.cpp", Form1);
 USEFORM("FrmReports.cpp", FormReports);
 //---------------------------------------------------------------------------
 extern "C" int FMXmain()
@@ -19,6 +20,7 @@ extern "C" int FMXmain()
 		Application->CreateForm(__classid(TForm1), &Form1);
 		Application->CreateForm(__classid(TFrmBudget), &FrmBudget);
 		Application->CreateForm(__classid(TFormReports), &FormReports);
+		Application->CreateForm(__classid(TFrmDlgSelectMandantAndYear), &FrmDlgSelectMandantAndYear);
 		Application->Run();
 	}
 	catch (Exception &exception)

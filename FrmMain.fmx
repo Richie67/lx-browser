@@ -1,7 +1,7 @@
 object Form1: TForm1
   Left = 0
   Top = 0
-  Caption = 'Lexware Browser 2019 (2019-11-26)'
+  Caption = 'Lexware Browser 2020 (2020-07-19)'
   ClientHeight = 595
   ClientWidth = 925
   FormFactor.Width = 320

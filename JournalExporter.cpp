@@ -46,6 +46,7 @@ static void createViewReportCompetitiveSport(sqlite3 *pDB, TMemo *pMemo);
 
 static void createViewReportAllSports(sqlite3 *pDB, TMemo *pMemo);
 
+static void createViewReportPraesidiumPlaning(sqlite3 *pDB, TMemo *pMemo);
 
 static void createTableCostUnitReports(sqlite3 *pDB, TMemo *pMemo);
 
@@ -63,12 +64,15 @@ static void fillTableCostUnitRprtItems3(sqlite3 *pDB, TMemo *pMemo);
 
 static void fillTableCostUnitRprtItems4(sqlite3 *pDB, TMemo *pMemo);
 
+static void fillTableCostUnitRprtItems5(sqlite3 *pDB, TMemo *pMemo);
+
 static void createTableCostUnitSummery(sqlite3 *pDB, TMemo *pMemo);
 
 static void insertTableCostUnitSummery3(sqlite3 *pDB, TMemo *pMemo);
 
-static void createTableCostUnitSummery2(sqlite3 *pDB, TMemo *pMemo);
+static void insertTableCostUnitSummery2(sqlite3 *pDB, TMemo *pMemo);
 
+static void insertTableCostUnitSummery5(sqlite3 *pDB, TMemo *pMemo);
 
 
 extern void exportJournalToDatabase(UnicodeString filename, Journal &journal, KontenRahmen &konten, Kostenstellen &kostenstellen, TMemo *pMemo) {
@@ -423,6 +427,7 @@ extern void exportJournalToDatabase(UnicodeString filename, Journal &journal, Ko
 	createViewReportBudget(pDb, pMemo);
 	createViewReportCompetitiveSport(pDb, pMemo);
 	createViewReportAllSports(pDb, pMemo);
+    createViewReportPraesidiumPlaning(pDb, pMemo);
 
 	pMemo->Lines->Add("Create cost unit reports");
 	createTableCostUnitReports(pDb, pMemo);
@@ -433,9 +438,11 @@ extern void exportJournalToDatabase(UnicodeString filename, Journal &journal, Ko
 	fillTableCostUnitRprtItems2(pDb, pMemo);
 	fillTableCostUnitRprtItems3(pDb, pMemo);
 	fillTableCostUnitRprtItems4(pDb, pMemo);
+    fillTableCostUnitRprtItems5(pDb, pMemo);
 	createTableCostUnitSummery(pDb, pMemo);
 	insertTableCostUnitSummery3(pDb, pMemo);
-	createTableCostUnitSummery2(pDb, pMemo);
+	insertTableCostUnitSummery2(pDb, pMemo);
+    insertTableCostUnitSummery5(pDb, pMemo);
 
     pMemo->Lines->Add("export completed");
 	// cleanup
@@ -1146,6 +1153,45 @@ static void createViewReportAllSports(sqlite3 *pDB, TMemo *pMemo) {
 }
 
 
+static void createViewReportPraesidiumPlaning(sqlite3 *pDB, TMemo *pMemo) {
+
+	char *strStmt =
+"CREATE VIEW reportpraesidiumforplaning as " \
+"select cast('Soll' as text) as type, " \
+"		  j.ktosoll as noAccount, " \
+"		  a.textAccount, " \
+"		  cu.idParentCostUnit, " \
+"		  cast(sum(j.betrag) as real) as betrag, " \
+"		  cu.textCostUnit, " \
+"		  cu2.textCostUnit as parentCostUnit " \
+"from journal j, CostUnit cu, Account a, CostUnit cu2 " \
+"where j.KOSTENSTELLE = cu.idCostUnit " \
+"	and cu.idParentCostUnit = cu2.idCostUnit " \
+"	and j.ktosoll = a.idAccount " \
+"	and j.ktosoll >= 2000 " \
+"	and j.ktosoll < 9000 " \
+"	and j.KOSTENSTELLE in (101, 102, 103, 104, 105, 106, 107, 108, 109) " \
+"group by cu.idParentCostUnit, j.ktosoll " \
+"union " \
+"select cast('Haben' as text) as type, " \
+"	j.ktohaben as noAccount, " \
+"	a.textAccount, " \
+"	cu.idParentCostUnit, " \
+"	cast(sum(j.betrag) as real) as betrag, " \
+"	cu.textCostUnit, " \
+"	cu2.textCostUnit as parentCostUnit " \
+"from journal j, CostUnit cu, Account a, CostUnit cu2 " \
+"where j.KOSTENSTELLE = cu.idCostUnit " \
+"	and cu.idParentCostUnit = cu2.idCostUnit " \
+"	and j.ktohaben = a.idAccount " \
+"	and j.ktohaben >= 2000 	and j.ktohaben < 9000 " \
+"	and j.KOSTENSTELLE in (101, 102, 103, 104, 105, 106, 107, 108, 109) " \
+"group by cu.idParentCostUnit, j.ktohaben " \
+"order by 1, cu.idParentCostUnit, j.ktohaben ";
+
+	executeStatement(pDB, pMemo, strStmt);
+}
+
 
 static void fillTableAccountValuesStep1(sqlite3 *pDB, TMemo *pMemo) {
 
@@ -1397,7 +1443,7 @@ static void fillTableCostUnitRprtItems(sqlite3 *pDB, TMemo *pMemo) {
 
 	char *strStmt =
 	"insert into CostUnitReports (NO, NAME) " \
-	"values (1, 'Präsidium'), (2, 'Sportkommissionen'), (3, 'Leistungssport incl.'), (4, 'Leistungssport excl.');"
+	"values (1, 'Präsidium'), (2, 'Sportkommissionen'), (3, 'Leistungssport incl.'), (4, 'Leistungssport excl.'), (5, 'Praesidium full.');"
 	;
 
 	executeStatement(pDB, pMemo, strStmt);
@@ -1476,6 +1522,20 @@ static void fillTableCostUnitRprtItems4(sqlite3 *pDB, TMemo *pMemo) {
 }
 
 
+static void fillTableCostUnitRprtItems5(sqlite3 *pDB, TMemo *pMemo) {
+
+	char *strStmt =
+	"insert into CostUnitRprtItems (NORPRT, NOCOSTUNIT) " \
+	"values (5, 101), (5, 102), (5, 103), (5, 104), (5, 105), " \
+	"(5, 106), (5, 107), (5, 108), (5, 109);"
+	;
+
+	executeStatement(pDB, pMemo, strStmt);
+}
+
+
+
+
 static void createTableCostUnitSummery(sqlite3 *pDB, TMemo *pMemo) {
 
 	char *strStmt =
@@ -1510,13 +1570,26 @@ static void insertTableCostUnitSummery3(sqlite3 *pDB, TMemo *pMemo) {
 }
 
 
-static void createTableCostUnitSummery2(sqlite3 *pDB, TMemo *pMemo) {
+static void insertTableCostUnitSummery2(sqlite3 *pDB, TMemo *pMemo) {
 
 	char *strStmt =
 	"insert into CostUnitSummery " \
 	"(NORPRT, type, accno, accname, COSTUNITNO, PRNTCUNO, VALUE, COSTUNITTEXT, PRNTCUTEXT) " \
 	"select 2, type, noAccount, textAccount, kostenstelle, idParentCostUnit, betrag, textCostUnit, parentCostUnit " \
 	"from reportallsports;"
+	;
+
+	executeStatement(pDB, pMemo, strStmt);
+}
+
+
+static void insertTableCostUnitSummery5(sqlite3 *pDB, TMemo *pMemo) {
+
+	char *strStmt =
+	"insert into CostUnitSummery " \
+	"(NORPRT, type, accno, accname, COSTUNITNO, PRNTCUNO, VALUE, COSTUNITTEXT, PRNTCUTEXT) " \
+	"select 5, type, noAccount, textAccount, idParentCostUnit, idParentCostUnit, betrag, parentCostUnit, parentCostUnit " \
+	"from reportpraesidiumforplaning;"
 	;
 
 	executeStatement(pDB, pMemo, strStmt);

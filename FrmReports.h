@@ -43,12 +43,17 @@ __published:	// IDE-managed Components
 	TSQLQuery *SQLQuery5;
 	TfrxDBDataset *frxDBDataset5;
 	TfrxReport *frxReport5;
+	TButton *BttnPraesidium;
+	TSQLQuery *SQLQuery6;
+	TfrxDBDataset *frxDBDataset6;
+	TfrxReport *frxReport6;
 	void __fastcall BttnConnectClick(TObject *Sender);
 	void __fastcall BttnExecuteClick(TObject *Sender);
 	void __fastcall BttnKostenstellenClick(TObject *Sender);
 	void __fastcall BttnFinanzstatusClick(TObject *Sender);
 	void __fastcall BttnLeistungssportClick(TObject *Sender);
 	void __fastcall BttnSKKostenClick(TObject *Sender);
+	void __fastcall BttnPraesidiumClick(TObject *Sender);
 private:	// User declarations
 	void __fastcall ShowSelectResults();
 	UnicodeString   databaseFileName;

@@ -32,19 +32,25 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 void __fastcall TForm1::BttnLoadClick(TObject *Sender)
 {
 	//
-	this->Memo1->Lines->Clear();
-	doGenerateDataStructures(this->Memo1, this->ComboBox1);
-	doGenerateJournal(this->Memo1);
-	doGenerateKontenRahmen(this->Memo1);
-	AllMatcher matcher;
-	filter.doFiler(matcher);
-	fillStringGrid();
-	Kostenstellen &kostenstellen = Kostenstellen::instance();
-	kostenstellen.fillComboBox(this->ComboKst1);
-	kostenstellen.fillComboBox(this->ComboKst2);
-	KontenRahmen &konten = KontenRahmen::instance();
-	konten.fillComboBox(this->ComboKtoSoll);
-    konten.fillComboBox(this->ComboKtoHaben);
+	int modalResult = FrmDlgSelectMandantAndYear->ShowModal();
+	if (modalResult == mrOk) {
+		int year = FrmDlgSelectMandantAndYear->getYearOfBooking();
+		std::string mandant = FrmDlgSelectMandantAndYear->getMandant();
+
+		this->Memo1->Lines->Clear();
+		doGenerateDataStructures(this->Memo1, this->ComboBox1);
+		doGenerateJournal(this->Memo1);
+		doGenerateKontenRahmen(this->Memo1);
+		AllMatcher matcher;
+		filter.doFiler(matcher);
+		fillStringGrid();
+		Kostenstellen &kostenstellen = Kostenstellen::instance();
+		kostenstellen.fillComboBox(this->ComboKst1);
+		kostenstellen.fillComboBox(this->ComboKst2);
+		KontenRahmen &konten = KontenRahmen::instance();
+		konten.fillComboBox(this->ComboKtoSoll);
+		konten.fillComboBox(this->ComboKtoHaben);
+	}
 }
 //---------------------------------------------------------------------------
 
@@ -54,6 +60,8 @@ void __fastcall TForm1::fillStringGrid() {
 
 	Journal &journal = Journal::instance();
 	// int count = journal.getCount();
+	// StringGrid1->ClearContent();
+	StringGrid1->BeginUpdate();
 	int count = filter.getCount();
 	StringGrid1->RowCount = count;
 	StringGrid1->Columns[0]->Header = "Nr";
@@ -69,7 +77,7 @@ void __fastcall TForm1::fillStringGrid() {
 	for (int i = 0; i < count; i++) {
 		try {
 			// JournalItem &item = journal.getItem(i);
-            JournalItem &item = filter.getItem(i);
+			JournalItem &item = filter.getItem(i);
 			AnsiString us;
 			int lNr = item.getLNr();
 			us.printf("%d", lNr);
@@ -96,11 +104,13 @@ void __fastcall TForm1::fillStringGrid() {
 			us.printf("%d-%d-%s", item.getLBelegNr(), item.getIBelegKreis(), item.getStrBelegNr().c_str());
 			// int iBelegNo = item.getLBelegNr();
 			// us.printf("%d", iBelegNo);
-            StringGrid1->Cells[9][i] = us;
+			StringGrid1->Cells[9][i] = us;
 		} catch (std::invalid_argument &e) {
 
 		}
+
 	}
+	StringGrid1->EndUpdate();
 }
 
 void __fastcall TForm1::updateKostenstellenEdit(TEdit *pEdit, Kostenstellen &kostenstellen, int idKst) {

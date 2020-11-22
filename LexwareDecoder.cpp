@@ -16,7 +16,9 @@
 #pragma package(smart_init)
 
 
-static char *pszFilenameDetails  = "C:\\ProgramData\\Lexware\\buchhalter\\Daten\\00000001\\2019\\BHStdYear.dbs";
+// static char *pszFilenameDetails  = "C:\\ProgramData\\Lexware\\buchhalter\\Daten\\00000001\\2019\\BHStdYear.dbs";
+static char *pszFilenameDetails  = "C:\\ProgramData\\Lexware\\buchhalter\\Daten\\00000001\\2020\\BHStdYear.dbs";
+// static char *pszFilenameDetails  = "C:\\ProgramData\\Lexware\\buchhalter\\Daten\\00000001\\2018\\BHStdYear.dbs";
 static char *pszFilenameCompany  = "C:\\ProgramData\\Lexware\\buchhalter\\Daten\\00000001\\BHStdCompany.dbs";
 static char *pszFilenameAccounts = "C:\\ProgramData\\Lexware\\buchhalter\\Daten\\00000001\\BHStdAccountList.dbs";
 

@@ -3,7 +3,7 @@
         <ProjectGuid>{65D07221-AE17-446C-BE66-5B2B9CDD2053}</ProjectGuid>
         <ProjectVersion>18.8</ProjectVersion>
         <FrameworkType>FMX</FrameworkType>
-        <MainSource>LexwareBrowserXII-2019.cpp</MainSource>
+        <MainSource>LexwareBrowserXII-2020.cpp</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
@@ -60,7 +60,7 @@
         <Multithreaded>true</Multithreaded>
         <IncludePath>C:\src\c\LexwareBrowserXII\;$(IncludePath)</IncludePath>
         <ILINK_LibraryPath>C:\Program Files (x86)\FastReports\FastReport FMX Embarcadero edition\LibD26\;C:\src\c\LexwareBrowserXII\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <SanitizedProjectName>LexwareBrowserXII-2019</SanitizedProjectName>
+        <SanitizedProjectName>LexwareBrowserXII-2020</SanitizedProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <PackageImports>appanalytics;bcbsmp;bindcomp;bindcompfmx;bindcompvcl;bindengine;CustomIPTransport;dbrtl;dsnap;fmx;fmxase;fmxdae;fmxobj;IndyCore;IndyProtocols;IndySystem;rtl;svn;tethering;vcl;vclactnband;vcldb;vcldsnap;vclie;vclimg;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
@@ -118,6 +118,12 @@
             <DependentOn>Budget.h</DependentOn>
             <BuildOrder>16</BuildOrder>
         </CppCompile>
+        <CppCompile Include="DlgSelectMandantAndYear.cpp">
+            <Form>FrmDlgSelectMandantAndYear</Form>
+            <FormType>fmx</FormType>
+            <DependentOn>DlgSelectMandantAndYear.h</DependentOn>
+            <BuildOrder>18</BuildOrder>
+        </CppCompile>
         <CppCompile Include="Filter.cpp">
             <DependentOn>Filter.h</DependentOn>
             <BuildOrder>14</BuildOrder>
@@ -160,7 +166,7 @@
             <DependentOn>Kostenstellen.h</DependentOn>
             <BuildOrder>3</BuildOrder>
         </CppCompile>
-        <CppCompile Include="LexwareBrowserXII-2019.cpp">
+        <CppCompile Include="LexwareBrowserXII-2020.cpp">
             <BuildOrder>0</BuildOrder>
         </CppCompile>
         <PCHCompile Include="LexwareBrowserXII.h">
@@ -189,8 +195,9 @@
             <DependentOn>sqlitewrapper.h</DependentOn>
             <BuildOrder>5</BuildOrder>
         </CppCompile>
-        <FormResources Include="FrmMain.fmx"/>
         <FormResources Include="FormBudget.fmx"/>
+        <FormResources Include="DlgSelectMandantAndYear.fmx"/>
+        <FormResources Include="FrmMain.fmx"/>
         <FormResources Include="FrmReports.fmx"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
@@ -216,7 +223,7 @@
                     <ProjectProperties Name="IndexFiles">False</ProjectProperties>
                 </ProjectProperties>
                 <Source>
-                    <Source Name="MainSource">LexwareBrowserXII-2019.cpp</Source>
+                    <Source Name="MainSource">LexwareBrowserXII-2020.cpp</Source>
                 </Source>
                 <Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcboffice2k260.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
@@ -293,14 +300,20 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName=".\Win32\Debug\LexwareBrowserXII-2020.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>LexwareBrowserXII-2020.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib" Class="DependencyModule">
                     <Platform Name="OSX32">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName=".\Win32\Debug\LexwareBrowserXII-2019.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName=".\Win32\Debug\LexwareBrowserXII-2020.tds" Configuration="Debug" Class="DebugSymbols">
                     <Platform Name="Win32">
-                        <RemoteName>LexwareBrowserXII-2019.exe</RemoteName>
+                        <RemoteName>LexwareBrowserXII-2020.tds</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -316,12 +329,6 @@
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\Redist\osx64\libcgsqlite3.dylib" Class="DependencyModule">
                     <Platform Name="OSX64">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName=".\Win32\Debug\LexwareBrowserXII-2019.tds" Configuration="Debug" Class="DebugSymbols">
-                    <Platform Name="Win32">
-                        <RemoteName>LexwareBrowserXII-2019.tds</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
