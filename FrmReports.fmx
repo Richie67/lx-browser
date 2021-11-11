@@ -72,7 +72,6 @@ object FormReports: TFormReports
     Params.Strings = (
       'DriverName=Sqlite'
       'Database=C:\Users\xca1030\AppData\Local\Temp\tmp6463.tmp.db3')
-    Connected = True
   end
   object SQLQuery1: TSQLQuery
     MaxBlobSize = 1
@@ -120,7 +119,7 @@ object FormReports: TFormReports
       object ReportTitle1: TfrxReportTitle
         Description = 'Kostenstellen'
         Height = 60.472480000000000000
-        Top = 18.897650000000000000
+        Top = 16.000000000000000000
         Width = 740.409927000000000000
         object Memo1: TfrxMemoView
           Width = 638.740570000000000000
@@ -138,12 +137,12 @@ object FormReports: TFormReports
       end
       object PageFooter1: TfrxPageFooter
         Height = 22.677180000000000000
-        Top = 215.433210000000000000
+        Top = 132.000000000000000000
         Width = 740.409927000000000000
       end
       object MasterData1: TfrxMasterData
         Height = 22.677180000000000000
-        Top = 136.063080000000000000
+        Top = 92.000000000000000000
         Width = 740.409927000000000000
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
