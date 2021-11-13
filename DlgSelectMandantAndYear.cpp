@@ -20,6 +20,12 @@ std::string TFrmDlgSelectMandantAndYear::getMandant() {
 
 
 int TFrmDlgSelectMandantAndYear::getYearOfBooking() {
+	if (this->RdBttn2023->IsChecked) {
+        return 2023;
+	}
+	if (this->RdBttn2022->IsChecked) {
+		return 2022;
+	}
 	if (this->RdBttn2021->IsChecked) {
 		return 2021;
 	}

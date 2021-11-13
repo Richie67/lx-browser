@@ -24,6 +24,7 @@
 #include "Kostenstellen.h"
 #include "ModelMainForm.h"
 #include "Filter.h"
+#include <FMX.Memo.Types.hpp>
 
 
 //---------------------------------------------------------------------------

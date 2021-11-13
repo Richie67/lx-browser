@@ -17,6 +17,7 @@
 #include <Data.DbxSqlite.hpp>
 #include <FMX.frxClass.hpp>
 #include <FMX.frxDBSet.hpp>
+#include <FMX.Memo.Types.hpp>
 //---------------------------------------------------------------------------
 class TFormReports : public TForm
 {

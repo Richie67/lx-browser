@@ -39,7 +39,7 @@ void __fastcall TForm1::BttnLoadClick(TObject *Sender)
 
 		this->Memo1->Lines->Clear();
 		doGenerateDataStructures(this->Memo1, this->ComboBox1);
-		doGenerateJournal(this->Memo1);
+		doGenerateJournal(this->Memo1, mandant.c_str(), year);
 		doGenerateKontenRahmen(this->Memo1);
 		AllMatcher matcher;
 		filter.doFiler(matcher);
@@ -271,16 +271,18 @@ void __fastcall TForm1::BttnSaveClick(TObject *Sender)
     int idx = model.getIdx();
 	int idKst1 = model.getKostenstelle1();
 	int idKst2 = model.getKostenstelle2();
+	int year = FrmDlgSelectMandantAndYear->getYearOfBooking();
+	std::string mandant = FrmDlgSelectMandantAndYear->getMandant();
 	Kostenstellen &kostenstellen = Kostenstellen::instance();
 	if (idKst1 >= 0 && idKst2 >= 0) {
-		updateKostenstellen(no, idx, idKst1, idKst2, this->Memo1);
+		updateKostenstellen(no, idx, idKst1, idKst2, this->Memo1, mandant.c_str(), year);
 	} else {
 		ShowMessage("Kostenstellen wurden nicht geändert!");
 	}
 	int ktoSoll = model.getKontoSoll();
 	int ktoHaben = model.getKontoHaben();
 	if (ktoSoll > 0 || ktoHaben > 0) {
-		updateJournalRecordKonto(no, idx, ktoSoll, ktoHaben, this->Memo1);
+		updateJournalRecordKonto(no, idx, ktoSoll, ktoHaben, this->Memo1, mandant.c_str(), year);
 	} else {
 		ShowMessage("Kontenzuordnung wurde nicht geändert!");
 	}
@@ -356,7 +358,10 @@ void __fastcall TForm1::BttnDeleteClick(TObject *Sender)
 	// TOBEDONE
 	int no = model.getId();
 
-	deleteJournalRecord(no, this->Memo1);
+	int year = FrmDlgSelectMandantAndYear->getYearOfBooking();
+	std::string mandant = FrmDlgSelectMandantAndYear->getMandant();
+
+	deleteJournalRecord(no, this->Memo1, mandant.c_str(), year);
 
 	model.setChanged(false);
 	update();
@@ -439,6 +444,7 @@ static bool isKontokorrentKonto(long kto) {
 void __fastcall TForm1::BttnMissingKStClick(TObject *Sender)
 {
 	// TODO
+	int countMissing = 0;
 	Journal &journal = Journal::instance();
 	KontenRahmen &konten = KontenRahmen::instance();
 	int count = journal.getCount();
@@ -498,11 +504,16 @@ void __fastcall TForm1::BttnMissingKStClick(TObject *Sender)
 			if (!isOk) {
 				int stop = i;
 				i = count;
-                this->StringGrid1->Selected = stop;
-            }
+				this->StringGrid1->Selected = stop;
+				countMissing++;
+			}
 		} catch (std::invalid_argument &e) {
 
 		}
+	}
+	if (countMissing == 0) {
+		ShowMessage("Es gibt keine Buchungen mit fehlenden Kostenstellen!");
+
 	}
 
 }

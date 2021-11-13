@@ -22,6 +22,8 @@ __published:	// IDE-managed Components
 	TRadioButton *RdBttn2021;
 	TRadioButton *RdBttn2020;
 	TRadioButton *RdBttn2019;
+	TRadioButton *RdBttn2022;
+	TRadioButton *RdBttn2023;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFrmDlgSelectMandantAndYear(TComponent* Owner);

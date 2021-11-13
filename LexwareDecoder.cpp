@@ -17,11 +17,17 @@
 
 
 // static char *pszFilenameDetails  = "C:\\ProgramData\\Lexware\\buchhalter\\Daten\\00000001\\2019\\BHStdYear.dbs";
-static char *pszFilenameDetails  = "C:\\ProgramData\\Lexware\\buchhalter\\Daten\\00000001\\2020\\BHStdYear.dbs";
+static char *pszFilenameDetailsPrefix = "C:\\ProgramData\\Lexware\\buchhalter\\Daten\\";
+static char *pszFilenameDetailsSuffix = "BHStdYear.dbs";
+// static char *pszFilenameDetails  = "C:\\ProgramData\\Lexware\\buchhalter\\Daten\\00000001\\2020\\BHStdYear.dbs";
 // static char *pszFilenameDetails  = "C:\\ProgramData\\Lexware\\buchhalter\\Daten\\00000001\\2018\\BHStdYear.dbs";
 static char *pszFilenameCompany  = "C:\\ProgramData\\Lexware\\buchhalter\\Daten\\00000001\\BHStdCompany.dbs";
 static char *pszFilenameAccounts = "C:\\ProgramData\\Lexware\\buchhalter\\Daten\\00000001\\BHStdAccountList.dbs";
 
+static void buildFilename(char *pOut, size_t size, std::string mandant, int year) {
+	memset(pOut, 0, size);
+	snprintf(pOut, size, "%s\\%s\\%i\\%s", pszFilenameDetailsPrefix, mandant.c_str(), year, pszFilenameDetailsSuffix);
+}
 
 int extractKostenstellen(sqlite3 *db, TMemo *Memo1) {
 
@@ -255,7 +261,7 @@ int extractJournal(Journal &journal, sqlite3 *db, TMemo *Memo1) {
 
 
 
-int doGenerateJournal(TMemo *Memo1)
+int doGenerateJournal(TMemo *Memo1, const char *pszMandant, int year)
 {
 
 	Journal &journal = Journal::instance();
@@ -266,7 +272,10 @@ int doGenerateJournal(TMemo *Memo1)
 	char *zErrMsg = 0;
 	int rc;
 
-	rc = sqlite3_open(pszFilenameDetails, &db);
+	char szFilename[2048];
+	buildFilename(szFilename, sizeof(szFilename), pszMandant, year);
+
+	rc = sqlite3_open(szFilename, &db);
 
 	rc = sqlite3_create_collation(db, "ZSTRING", SQLITE_UTF8, NULL, zstring_compare);
 
@@ -546,7 +555,7 @@ static int updateJournalKostenstellen(int no, int idx, int kst1, int kst2, sqlit
 }
 
 
-int updateKostenstellen(int nr, int idx, int kst1, int kst2, TMemo *pMemo) {
+int updateKostenstellen(int nr, int idx, int kst1, int kst2, TMemo *pMemo, const char *pszMandant, int year) {
 
 
 	sqlite3 *db;
@@ -554,7 +563,10 @@ int updateKostenstellen(int nr, int idx, int kst1, int kst2, TMemo *pMemo) {
 	char *zErrMsg = 0;
 	int rc;
 
-	rc = sqlite3_open(pszFilenameDetails, &db);
+	char szFilename[2048];
+	buildFilename(szFilename, sizeof(szFilename), pszMandant, year);
+
+	rc = sqlite3_open(szFilename, &db);
 
 	rc = sqlite3_create_collation(db, "ZSTRING", SQLITE_UTF8, NULL, zstring_compare);
 
@@ -625,14 +637,17 @@ static int deleteJournal(int no, sqlite3 *db, TMemo *pMemo) {
 }
 
 
-int deleteJournalRecord(int nr, TMemo *pMemo) {
+int deleteJournalRecord(int nr, TMemo *pMemo, const char *pszMandant, int year) {
 
 	sqlite3 *db;
 
 	char *zErrMsg = 0;
 	int rc;
 
-	rc = sqlite3_open(pszFilenameDetails, &db);
+	char szFilename[2048];
+	buildFilename(szFilename, sizeof(szFilename), pszMandant, year);
+
+	rc = sqlite3_open(szFilename, &db);
 
 	rc = sqlite3_create_collation(db, "ZSTRING", SQLITE_UTF8, NULL, zstring_compare);
 
@@ -775,14 +790,17 @@ int updateJournalRecordKonten(int nr, int idx, int ktoSoll, int ktoHaben, sqlite
 }
 
 
-int updateJournalRecordKonto(int nr, int idx, int ktoSoll, int ktoHaben, TMemo *pMemo) {
+int updateJournalRecordKonto(int nr, int idx, int ktoSoll, int ktoHaben, TMemo *pMemo, const char *pszMandant, int year) {
 
 	sqlite3 *db;
 
 	char *zErrMsg = 0;
 	int rc;
 
-	rc = sqlite3_open(pszFilenameDetails, &db);
+	char szFilename[2048];
+	buildFilename(szFilename, sizeof(szFilename), pszMandant, year);
+
+	rc = sqlite3_open(szFilename, &db);
 
 	rc = sqlite3_create_collation(db, "ZSTRING", SQLITE_UTF8, NULL, zstring_compare);
 
@@ -960,14 +978,17 @@ int updateJournalRecordAll(int nr, int idx, int ktoSoll, int ktoHaben, int kst1,
 }
 
 
-int updateJournalRecordAll(int nr, int idx, int ktoSoll, int ktoHaben, int kst1, int kst2, TMemo *pMemo) {
+int updateJournalRecordAll(int nr, int idx, int ktoSoll, int ktoHaben, int kst1, int kst2, TMemo *pMemo, const char *pszMandant, int year) {
 
 	sqlite3 *db;
 
 	char *zErrMsg = 0;
 	int rc;
 
-	rc = sqlite3_open(pszFilenameDetails, &db);
+	char szFilename[2048];
+	buildFilename(szFilename, sizeof(szFilename), pszMandant, year);
+
+	rc = sqlite3_open(szFilename, &db);
 
 	rc = sqlite3_create_collation(db, "ZSTRING", SQLITE_UTF8, NULL, zstring_compare);
 

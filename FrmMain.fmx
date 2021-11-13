@@ -1,7 +1,7 @@
 object Form1: TForm1
   Left = 0
   Top = 0
-  Caption = 'Lexware Browser 2020 (2020-07-19)'
+  Caption = 'Lexware Browser (2021-11-12)'
   ClientHeight = 595
   ClientWidth = 925
   FormFactor.Width = 320
@@ -313,8 +313,8 @@ object Form1: TForm1
     Size.Height = 114.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 4
-    Viewport.Width = 925.000000000000000000
-    Viewport.Height = 114.000000000000000000
+    Viewport.Width = 921.000000000000000000
+    Viewport.Height = 110.000000000000000000
   end
   object StringGrid1: TStringGrid
     Align = Bottom
@@ -329,8 +329,8 @@ object Form1: TForm1
     Options = [Editing, ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
     OnSelChanged = StringGrid1SelChanged
     OnCellClick = StringGrid1CellClick
-    Viewport.Width = 925.000000000000000000
-    Viewport.Height = 211.000000000000000000
+    Viewport.Width = 905.000000000000000000
+    Viewport.Height = 186.000000000000000000
     object StringColumn1: TStringColumn
       Size.Width = 49.000000000000000000
     end

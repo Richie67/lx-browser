@@ -24,8 +24,8 @@ object FormReports: TFormReports
     Size.Height = 265.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 3
-    Viewport.Width = 557.000000000000000000
-    Viewport.Height = 261.000000000000000000
+    Viewport.Width = 561.000000000000000000
+    Viewport.Height = 265.000000000000000000
   end
   object BttnKostenstellen: TButton
     Position.X = 24.000000000000000000
@@ -82,7 +82,7 @@ object FormReports: TFormReports
     Left = 64
   end
   object frxReport1: TfrxReport
-    Version = '2.6.2'
+    Version = '2.7.3'
     DotMatrixReport = False
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFullScreen, pbOutline, pbThumbnails, pbPageSetup, pbEdit, pbNavigator, pbClose]
     PreviewOptions.Zoom = 1.000000000000000000
@@ -7882,7 +7882,7 @@ object FormReports: TFormReports
     Top = 48
   end
   object frxReport2: TfrxReport
-    Version = '2.6.2'
+    Version = '2.7.3'
     DotMatrixReport = False
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFullScreen, pbOutline, pbThumbnails, pbPageSetup, pbEdit, pbNavigator, pbClose]
     PreviewOptions.Zoom = 1.000000000000000000
@@ -15806,7 +15806,7 @@ object FormReports: TFormReports
     Left = 408
   end
   object frxReport3: TfrxReport
-    Version = '2.6.2'
+    Version = '2.7.3'
     DotMatrixReport = False
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFullScreen, pbOutline, pbThumbnails, pbPageSetup, pbEdit, pbNavigator, pbClose]
     PreviewOptions.Zoom = 1.000000000000000000
@@ -16131,7 +16131,7 @@ object FormReports: TFormReports
     Top = 48
   end
   object frxReport4: TfrxReport
-    Version = '2.6.2'
+    Version = '2.7.3'
     DotMatrixReport = False
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFullScreen, pbOutline, pbThumbnails, pbPageSetup, pbEdit, pbNavigator, pbClose]
     PreviewOptions.Zoom = 1.000000000000000000
@@ -24089,7 +24089,7 @@ object FormReports: TFormReports
     Top = 104
   end
   object frxReport5: TfrxReport
-    Version = '2.6.2'
+    Version = '2.7.3'
     DotMatrixReport = False
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFullScreen, pbOutline, pbThumbnails, pbPageSetup, pbEdit, pbNavigator, pbClose]
     PreviewOptions.Zoom = 1.000000000000000000
@@ -32045,7 +32045,7 @@ object FormReports: TFormReports
     Top = 160
   end
   object frxReport6: TfrxReport
-    Version = '2.6.2'
+    Version = '2.7.3'
     DotMatrixReport = False
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFullScreen, pbOutline, pbThumbnails, pbPageSetup, pbEdit, pbNavigator, pbClose]
     PreviewOptions.Zoom = 1.000000000000000000
