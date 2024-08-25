@@ -3,7 +3,7 @@
         <ProjectGuid>{65D07221-AE17-446C-BE66-5B2B9CDD2053}</ProjectGuid>
         <ProjectVersion>19.1</ProjectVersion>
         <FrameworkType>FMX</FrameworkType>
-        <MainSource>LexwareBrowserXII-2024.cpp</MainSource>
+        <MainSource>LXBrowserXII-2024.cpp</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
@@ -59,7 +59,7 @@
         <Multithreaded>true</Multithreaded>
         <IncludePath>C:\src\c\LexwareBrowserXII\;C:\src\c\lexware-browser;$(IncludePath)</IncludePath>
         <ILINK_LibraryPath>C:\Program Files (x86)\FastReports\FastReport FMX Embarcadero edition\LibD27\;C:\src\c\LexwareBrowserXII\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <SanitizedProjectName>LexwareBrowserXII-2024</SanitizedProjectName>
+        <SanitizedProjectName>LXBrowserXII-2024</SanitizedProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <PackageImports>appanalytics;bcbsmp;bindcomp;bindcompfmx;bindcompvcl;bindengine;CustomIPTransport;dbrtl;dsnap;fmx;fmxase;fmxdae;fmxobj;IndyCore;IndyProtocols;IndySystem;rtl;svn;tethering;vcl;vclactnband;vcldb;vcldsnap;vclie;vclimg;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
@@ -165,9 +165,6 @@
             <DependentOn>Kostenstellen.h</DependentOn>
             <BuildOrder>3</BuildOrder>
         </CppCompile>
-        <CppCompile Include="LexwareBrowserXII-2024.cpp">
-            <BuildOrder>0</BuildOrder>
-        </CppCompile>
         <PCHCompile Include="LexwareBrowserXII.h">
             <BuildOrder>2</BuildOrder>
             <PCH>true</PCH>
@@ -175,6 +172,9 @@
         <CppCompile Include="LexwareDecoder.cpp">
             <DependentOn>LexwareDecoder.h</DependentOn>
             <BuildOrder>9</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="LXBrowserXII-2024.cpp">
+            <BuildOrder>0</BuildOrder>
         </CppCompile>
         <CppCompile Include="ModelMainForm.cpp">
             <DependentOn>ModelMainForm.h</DependentOn>
@@ -222,7 +222,7 @@
                     <ProjectProperties Name="IndexFiles">False</ProjectProperties>
                 </ProjectProperties>
                 <Source>
-                    <Source Name="MainSource">LexwareBrowserXII-2024.cpp</Source>
+                    <Source Name="MainSource">LXBrowserXII-2024.cpp</Source>
                 </Source>
                 <Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcboffice2k270.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
@@ -248,14 +248,20 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName=".\Win32\Debug\LXBrowserXII-2024.tds" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="Win32">
+                        <RemoteName>LXBrowserXII-2024.tds</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin64\cc64260mt.dll" Class="DependencyModule">
                     <Platform Name="Win64">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName=".\Win32\Debug\LexwareBrowserXII-2024.tds" Configuration="Debug" Class="DebugSymbols">
+                <DeployFile LocalName=".\Win32\Debug\LXBrowserXII-2024.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
-                        <RemoteName>LexwareBrowserXII-2024.tds</RemoteName>
+                        <RemoteName>LXBrowserXII-2024.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -322,12 +328,6 @@
                 <DeployFile LocalName="sqlite3.c" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName=".\Win32\Debug\LexwareBrowserXII-2024.exe" Configuration="Debug" Class="ProjectOutput">
-                    <Platform Name="Win32">
-                        <RemoteName>LexwareBrowserXII-2024.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

@@ -5,7 +5,7 @@
     <File Path="LexwareDecoder.cpp"/>
     <File Path="LexwareDecoder.h"/>
     <File Path="LexwareBrowserXII.h"/>
-    <File Path="LexwareBrowserXII-2024.cpp"/>
+    <File Path="LXBrowserXII-2024.cpp"/>
     <File Path="Kostenstellen.cpp"/>
     <File Path="Kostenstellen.cpp"/>
     <File Path="Kostenstellen.h"/>
@@ -56,6 +56,7 @@
     <File Path="FrmReports.h"/>
   </ProjectSortOrder>
 	<Transactions>
-    <Transaction>2024/03/09 23:19:18.000.881,C:\src\c\lexware-browser\LexwareBrowserXII-2020.cbproj=C:\src\c\lexware-browser\LexwareBrowserXII-2024.cbproj</Transaction>
+    <Transaction>2024/03/09 23:19:18.000.881,C:\src\c\lexware-browser\LexwareBrowserXII-2024.cbproj=C:\src\c\lexware-browser\LexwareBrowserXII-2020.cbproj</Transaction>
+    <Transaction>2024/08/25 13:06:37.700,C:\src\c\lexware-browser\LXBrowserXII-2024.cbproj=C:\src\c\lexware-browser\LexwareBrowserXII-2024.cbproj</Transaction>
   </Transactions>
 </BorlandProject>
