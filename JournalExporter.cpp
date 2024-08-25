@@ -449,6 +449,7 @@ extern void exportJournalToDatabase(UnicodeString filename, Journal &journal, Ko
 	if (NULL != stmt) sqlite3_finalize(stmt);
 	if (NULL != pDb) sqlite3_close(pDb);
 	// sqlite3_shutdown();
+	pMemo->Lines->Add("cleanup completed");
 	return;
 
 }

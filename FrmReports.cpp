@@ -16,6 +16,7 @@ TFormReports *FormReports;
 __fastcall TFormReports::TFormReports(TComponent* Owner)
 	: TForm(Owner)
 {
+	this->SQLConnection1->Connected = false;
 }
 //---------------------------------------------------------------------------
 void __fastcall TFormReports::BttnConnectClick(TObject *Sender)

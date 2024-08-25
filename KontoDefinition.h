@@ -7,6 +7,7 @@
 #include <vector>
 #include <stdint.h>
 #include <fmx.h>
+#include <FMX.ComboEdit.hpp>
 //---------------------------------------------------------------------------
 
 
@@ -136,7 +137,8 @@ public:
 	void add(const Konto &konto);
 	void dumpIntoMemo(TMemo *pMemo);
 	Konto &findKonto(int no);
-    void fillComboBox(TComboBox *pComboBox);
+	void fillComboBox(TComboBox *pComboBox);
+    void fillComboEdit(TComboEdit *pComboEdit);
 	int findIndex(int no);
 	int findIndex(Konto &konto);
 	int findKontoByListPosition(int sel);

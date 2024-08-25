@@ -25,6 +25,7 @@
 #include "ModelMainForm.h"
 #include "Filter.h"
 #include <FMX.Memo.Types.hpp>
+#include <FMX.ComboEdit.hpp>
 
 
 //---------------------------------------------------------------------------
@@ -85,7 +86,7 @@ __published:	// IDE-managed Components
 	TButton *BttnExport;
 	TSaveDialog *SaveDialog1;
 	TStringColumn *StringColumn10;
-	TMenuItem *MenuItemFile;
+	TMenuItem *MenuItemFileExit;
 	TPanel *Panel2;
 	TButton *BttnFilterClear;
 	TLabel *Label7;
@@ -94,8 +95,8 @@ __published:	// IDE-managed Components
 	TButton *BttnFilterCostUnit;
 	TButton *BttnAmount;
 	TButton *BttnBudget;
-	TMenuItem *MenuItem1;
-	TMenuItem *MenuItem2;
+	TMenuItem *MenuItemReports;
+	TMenuItem *MenuItemReportsBudget;
 	void __fastcall BttnLoadClick(TObject *Sender);
 	void __fastcall StringGrid1CellClick(TColumn * const Column, const int Row);
 	void __fastcall BttnLogKontenClick(TObject *Sender);
@@ -113,13 +114,13 @@ __published:	// IDE-managed Components
 	void __fastcall updateKostenstellenEdit(TEdit *pEdit, Kostenstellen &kostenstellen, int idKst);
 	void __fastcall BttnKtoChkClick(TObject *Sender);
 	void __fastcall BttnExportClick(TObject *Sender);
-	void __fastcall MenuItemFileClick(TObject *Sender);
+	void __fastcall MenuItemFileExitClick(TObject *Sender);
 	void __fastcall BttnFilterClearClick(TObject *Sender);
 	void __fastcall BttenFilterKontenClick(TObject *Sender);
 	void __fastcall BttnFilterCostUnitClick(TObject *Sender);
 	void __fastcall BttnAmountClick(TObject *Sender);
 	void __fastcall BttnBudgetClick(TObject *Sender);
-	void __fastcall MenuItem2Click(TObject *Sender);
+	void __fastcall MenuItemReportsBudgetClick(TObject *Sender);
 private:	// User declarations
     bool ignoreOnClick;
 	ModelJournal model;

@@ -20,22 +20,22 @@ std::string TFrmDlgSelectMandantAndYear::getMandant() {
 
 
 int TFrmDlgSelectMandantAndYear::getYearOfBooking() {
+	if (this->RdBttn2027->IsChecked) {
+		return 2027;
+	}
+	if (this->RdBttn2026->IsChecked) {
+		return 2062;
+	}
+	if (this->RdBttn2025->IsChecked) {
+		return 2025;
+	}
+	if (this->RdBttn2024->IsChecked) {
+		return 2024;
+	}
 	if (this->RdBttn2023->IsChecked) {
-        return 2023;
+		return 2023;
 	}
-	if (this->RdBttn2022->IsChecked) {
-		return 2022;
-	}
-	if (this->RdBttn2021->IsChecked) {
-		return 2021;
-	}
-	if (this->RdBttn2020->IsChecked) {
-		return 2020;
-	}
-	if (this->RdBttn2019->IsChecked) {
-		return 2019;
-	}
-    return 2018;
+    return 2022;
 }
 
 //---------------------------------------------------------------------------

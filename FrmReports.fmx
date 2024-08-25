@@ -70,8 +70,8 @@ object FormReports: TFormReports
     DriverName = 'Sqlite'
     LoginPrompt = False
     Params.Strings = (
-      'DriverName=Sqlite'
-      'Database=C:\Users\xca1030\AppData\Local\Temp\tmp6463.tmp.db3')
+      '')
+    Connected = True
   end
   object SQLQuery1: TSQLQuery
     MaxBlobSize = 1
@@ -24126,7 +24126,7 @@ object FormReports: TFormReports
       BottomMargin = 10.000000000000000000
       object PageFooter1: TfrxPageFooter
         Height = 22.677180000000000000
-        Top = 521.575140000000000000
+        Top = 428.000000000000000000
         Width = 740.409927000000000000
         object Page2: TfrxMemoView
           Left = 661.417750000000000000
@@ -24140,7 +24140,7 @@ object FormReports: TFormReports
       end
       object GroupHeader1: TfrxGroupHeader
         Height = 26.456710000000000000
-        Top = 188.976500000000000000
+        Top = 144.000000000000000000
         Width = 740.409927000000000000
         Condition = 'frxDBDataset5."PRNTCUNO"'
         StartNewPage = True
@@ -24180,7 +24180,7 @@ object FormReports: TFormReports
       end
       object GroupHeader2: TfrxGroupHeader
         Height = 22.677180000000000000
-        Top = 234.330860000000000000
+        Top = 188.000000000000000000
         Width = 740.409927000000000000
         Condition = 'frxDBDataset5."COSTUNITNO"'
         KeepTogether = True
@@ -24220,7 +24220,7 @@ object FormReports: TFormReports
       end
       object GroupHeader3: TfrxGroupHeader
         Height = 22.677180000000000000
-        Top = 275.905690000000000000
+        Top = 228.000000000000000000
         Width = 740.409927000000000000
         Condition = 'frxDBDataset5."TYPE"'
         object frxDBDataset4Column0: TfrxMemoView
@@ -24236,7 +24236,7 @@ object FormReports: TFormReports
       end
       object MasterData1: TfrxMasterData
         Height = 22.677180000000000000
-        Top = 317.480520000000000000
+        Top = 268.000000000000000000
         Width = 740.409927000000000000
         DataSet = frxDBDataset5
         DataSetName = 'frxDBDataset5'
@@ -24286,17 +24286,17 @@ object FormReports: TFormReports
       end
       object GroupFooter1: TfrxGroupFooter
         Height = 22.677180000000000000
-        Top = 442.205010000000000000
+        Top = 388.000000000000000000
         Width = 740.409927000000000000
       end
       object GroupFooter2: TfrxGroupFooter
         Height = 22.677180000000000000
-        Top = 400.630180000000000000
+        Top = 348.000000000000000000
         Width = 740.409927000000000000
       end
       object GroupFooter3: TfrxGroupFooter
         Height = 22.677180000000000000
-        Top = 359.055350000000000000
+        Top = 308.000000000000000000
         Width = 740.409927000000000000
         object frxMemoView1: TfrxMemoView
           Left = 585.827150000000000000
@@ -24318,7 +24318,7 @@ object FormReports: TFormReports
       end
       object PageHeader1: TfrxPageHeader
         Height = 113.385900000000000000
-        Top = 18.897650000000000000
+        Top = 16.000000000000000000
         Width = 740.409927000000000000
         object Memo2: TfrxMemoView
           Width = 623.622450000000000000

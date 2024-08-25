@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="LexwareDecoder.cpp"/>
+    <File Path="LexwareDecoder.cpp"/>
+    <File Path="LexwareDecoder.h"/>
+    <File Path="LexwareBrowserXII.h"/>
+    <File Path="LexwareBrowserXII-2024.cpp"/>
+    <File Path="Kostenstellen.cpp"/>
+    <File Path="Kostenstellen.cpp"/>
+    <File Path="Kostenstellen.h"/>
+    <File Path="ModelMainForm.cpp"/>
+    <File Path="ModelMainForm.cpp"/>
+    <File Path="ModelMainForm.h"/>
+    <File Path="sqlitewrapper.cpp"/>
+    <File Path="sqlitewrapper.cpp"/>
+    <File Path="sqlitewrapper.h"/>
+    <File Path="Sqlite3Helper.cpp"/>
+    <File Path="Sqlite3Helper.cpp"/>
+    <File Path="Sqlite3Helper.h"/>
+    <File Path="sqlite3.h"/>
+    <File Path="sqlite3.c"/>
+    <File Path="KontoDefinition.cpp"/>
+    <File Path="KontoDefinition.cpp"/>
+    <File Path="KontoDefinition.h"/>
+    <File Path="FormBudget.cpp"/>
+    <File Path="FormBudget.cpp"/>
+    <File Path="FormBudget.fmx"/>
+    <File Path="FormBudget.h"/>
+    <File Path="Filter.cpp"/>
+    <File Path="Filter.cpp"/>
+    <File Path="Filter.h"/>
+    <File Path="DlgSelectMandantAndYear.cpp"/>
+    <File Path="DlgSelectMandantAndYear.cpp"/>
+    <File Path="DlgSelectMandantAndYear.fmx"/>
+    <File Path="DlgSelectMandantAndYear.h"/>
+    <File Path="Budget.cpp"/>
+    <File Path="Budget.cpp"/>
+    <File Path="Budget.h"/>
+    <File Path="FrmMain.cpp"/>
+    <File Path="FrmMain.cpp"/>
+    <File Path="FrmMain.fmx"/>
+    <File Path="FrmMain.h"/>
+    <File Path="juldat.cpp"/>
+    <File Path="juldat.cpp"/>
+    <File Path="juldat.h"/>
+    <File Path="JournalExporter.cpp"/>
+    <File Path="JournalExporter.cpp"/>
+    <File Path="JournalExporter.h"/>
+    <File Path="Journal.cpp"/>
+    <File Path="Journal.cpp"/>
+    <File Path="Journal.h"/>
+    <File Path="FrmReports.cpp"/>
+    <File Path="FrmReports.cpp"/>
+    <File Path="FrmReports.fmx"/>
+    <File Path="FrmReports.h"/>
+  </ProjectSortOrder>
+	<Transactions>
+    <Transaction>2024/03/09 23:19:18.000.881,C:\src\c\lexware-browser\LexwareBrowserXII-2020.cbproj=C:\src\c\lexware-browser\LexwareBrowserXII-2024.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>

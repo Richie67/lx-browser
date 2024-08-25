@@ -4,6 +4,8 @@
 #include <string>
 #include <System.IOUtils.hpp>
 #include <SysUtils.hpp>
+#include <locale>
+#include <System.DateUtils.hpp>
 #pragma hdrstop
 
 #include "FrmMain.h"
@@ -50,6 +52,7 @@ void __fastcall TForm1::BttnLoadClick(TObject *Sender)
 		KontenRahmen &konten = KontenRahmen::instance();
 		konten.fillComboBox(this->ComboKtoSoll);
 		konten.fillComboBox(this->ComboKtoHaben);
+        // konten.fillComboEdit(this->ComboEdKtoHaben);
 	}
 }
 //---------------------------------------------------------------------------
@@ -553,7 +556,7 @@ void __fastcall TForm1::BttnExportClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::MenuItemFileClick(TObject *Sender)
+void __fastcall TForm1::MenuItemFileExitClick(TObject *Sender)
 {
 	this->Close();
 }
@@ -632,7 +635,7 @@ void __fastcall TForm1::BttnBudgetClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::MenuItem2Click(TObject *Sender)
+void __fastcall TForm1::MenuItemReportsBudgetClick(TObject *Sender)
 {
 	UnicodeString tempFile = System::Ioutils::TPath::GetTempFileName();
 	disableControls();
@@ -645,8 +648,14 @@ void __fastcall TForm1::MenuItem2Click(TObject *Sender)
 
 	exportJournalToDatabase(tempFile, journal, konten, kostenstellen, this->Memo1);
 
-    FormReports->setDatabaseFileName(tempFile);
-	FormReports->Show();
+	try {
+        Sleep(1000);
+		FormReports->setDatabaseFileName(tempFile);
+		FormReports->Show();
+
+	} catch (Exception &E) {
+        ShowMessage(E.Message);
+	}
 
 	enableControls();
 }
@@ -679,4 +688,5 @@ void __fastcall TForm1::lockControls(bool enabled) {
 	this->BttnMissingKSt->Enabled = enabled;
 	this->BttnSave->Enabled = enabled;
 }
+
 

@@ -3,7 +3,7 @@
         <ProjectGuid>{65D07221-AE17-446C-BE66-5B2B9CDD2053}</ProjectGuid>
         <ProjectVersion>19.1</ProjectVersion>
         <FrameworkType>FMX</FrameworkType>
-        <MainSource>LexwareBrowserXII-2020.cpp</MainSource>
+        <MainSource>LexwareBrowserXII-2024.cpp</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
@@ -43,7 +43,6 @@
     <PropertyGroup Condition="'$(Base)'!=''">
         <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
         <DynamicRTL>true</DynamicRTL>
-        <UsePackages>true</UsePackages>
         <IntermediateOutputDir>.\$(Platform)\$(Config)</IntermediateOutputDir>
         <FinalOutputDir>.\$(Platform)\$(Config)</FinalOutputDir>
         <BCC_wpar>false</BCC_wpar>
@@ -58,9 +57,9 @@
         <AllPackageLibs>rtl.lib;fmx.lib;dbrtl.lib;dbexpress.lib;DbxCommonDriver.lib;DBXSqliteDriver.lib;FMXfrx27.lib;FMXfs27.lib;FMXfrxDB27.lib;FMXfsDB27.lib</AllPackageLibs>
         <_TCHARMapping>wchar_t</_TCHARMapping>
         <Multithreaded>true</Multithreaded>
-        <IncludePath>C:\src\c\LexwareBrowserXII\;$(IncludePath)</IncludePath>
+        <IncludePath>C:\src\c\LexwareBrowserXII\;C:\src\c\lexware-browser;$(IncludePath)</IncludePath>
         <ILINK_LibraryPath>C:\Program Files (x86)\FastReports\FastReport FMX Embarcadero edition\LibD27\;C:\src\c\LexwareBrowserXII\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <SanitizedProjectName>LexwareBrowserXII-2020</SanitizedProjectName>
+        <SanitizedProjectName>LexwareBrowserXII-2024</SanitizedProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <PackageImports>appanalytics;bcbsmp;bindcomp;bindcompfmx;bindcompvcl;bindengine;CustomIPTransport;dbrtl;dsnap;fmx;fmxase;fmxdae;fmxobj;IndyCore;IndyProtocols;IndySystem;rtl;svn;tethering;vcl;vclactnband;vcldb;vcldsnap;vclie;vclimg;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
@@ -166,7 +165,7 @@
             <DependentOn>Kostenstellen.h</DependentOn>
             <BuildOrder>3</BuildOrder>
         </CppCompile>
-        <CppCompile Include="LexwareBrowserXII-2020.cpp">
+        <CppCompile Include="LexwareBrowserXII-2024.cpp">
             <BuildOrder>0</BuildOrder>
         </CppCompile>
         <PCHCompile Include="LexwareBrowserXII.h">
@@ -223,7 +222,7 @@
                     <ProjectProperties Name="IndexFiles">False</ProjectProperties>
                 </ProjectProperties>
                 <Source>
-                    <Source Name="MainSource">LexwareBrowserXII-2020.cpp</Source>
+                    <Source Name="MainSource">LexwareBrowserXII-2024.cpp</Source>
                 </Source>
                 <Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcboffice2k270.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
@@ -254,9 +253,9 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName=".\Win32\Debug\LexwareBrowserXII-2020.tds" Configuration="Debug" Class="DebugSymbols">
+                <DeployFile LocalName=".\Win32\Debug\LexwareBrowserXII-2024.tds" Configuration="Debug" Class="DebugSymbols">
                     <Platform Name="Win32">
-                        <RemoteName>LexwareBrowserXII-2020.tds</RemoteName>
+                        <RemoteName>LexwareBrowserXII-2024.tds</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -326,9 +325,9 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName=".\Win32\Debug\LexwareBrowserXII-2020.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName=".\Win32\Debug\LexwareBrowserXII-2024.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
-                        <RemoteName>LexwareBrowserXII-2020.exe</RemoteName>
+                        <RemoteName>LexwareBrowserXII-2024.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

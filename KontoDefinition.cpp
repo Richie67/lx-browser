@@ -76,6 +76,13 @@ void KontenRahmen::fillComboBox(TComboBox *pComboBox) {
 	}
 }
 
+void KontenRahmen::fillComboEdit(TComboEdit *pComboEdit) {
+	pComboEdit->Items->Clear();
+	for (std::vector<Konto>::iterator it = konten.begin(); it != konten.end(); ++it) {
+        pComboEdit->Items->Add(it->toString());
+	}
+}
+
 
 int KontenRahmen::findKontoByListPosition(int sel) {
 	std::vector<Konto>::iterator it = konten.begin();

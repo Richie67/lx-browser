@@ -1,7 +1,7 @@
 object Form1: TForm1
   Left = 0
   Top = 0
-  Caption = 'Lexware Browser (2021-11-12)'
+  Caption = 'Lexware Browser (2024-03-09)'
   ClientHeight = 595
   ClientWidth = 925
   FormFactor.Width = 320
@@ -431,18 +431,18 @@ object Form1: TForm1
     Left = 776
     object MnuItmFile: TMenuItem
       Text = 'F&ile'
-      object MenuItemFile: TMenuItem
+      object MenuItemFileExit: TMenuItem
         Locked = True
         Text = 'Exit'
-        OnClick = MenuItemFileClick
+        OnClick = MenuItemFileExitClick
       end
     end
-    object MenuItem1: TMenuItem
+    object MenuItemReports: TMenuItem
       Text = 'Reports'
-      object MenuItem2: TMenuItem
+      object MenuItemReportsBudget: TMenuItem
         Locked = True
         Text = 'Budget'
-        OnClick = MenuItem2Click
+        OnClick = MenuItemReportsBudgetClick
       end
     end
     object MnuItmHelp: TMenuItem

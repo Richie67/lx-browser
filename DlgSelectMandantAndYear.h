@@ -19,11 +19,11 @@ __published:	// IDE-managed Components
 	TButton *BttnOK;
 	TButton *BttnCancel;
 	TGroupBox *GroupBox1;
-	TRadioButton *RdBttn2021;
-	TRadioButton *RdBttn2020;
-	TRadioButton *RdBttn2019;
-	TRadioButton *RdBttn2022;
+	TRadioButton *RdBttn2025;
+	TRadioButton *RdBttn2024;
 	TRadioButton *RdBttn2023;
+	TRadioButton *RdBttn2026;
+	TRadioButton *RdBttn2027;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFrmDlgSelectMandantAndYear(TComponent* Owner);
